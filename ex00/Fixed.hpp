@@ -10,8 +10,13 @@ class Fixed{
 
     public:
         Fixed();
+        Fixed(Fixed const &src);
+        // copie les attribut d'un ojbet dans un autre
+        Fixed &operator=(Fixed const &rhs); // right hand side recoit l'original sans copie
+
         ~Fixed();
-        int getRawBits(void);
+
+        int getRawBits(void) const;
         void setRawBits(int const raw);
 };
 

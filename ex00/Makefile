@@ -1,10 +1,10 @@
 .PHONY : all clean fclean re
 .SILENT :
 
-NAME    = zombie
+NAME    = fixed
 CXX     = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC     = main.cpp 
+SRC     = main.cpp Fixed.cpp
 OBJ     = $(SRC:.cpp=.o)
 RM      = rm -f
 
