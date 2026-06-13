@@ -8,18 +8,23 @@ SRC     = main.cpp Fixed.cpp
 OBJ     = $(SRC:.cpp=.o)
 RM      = rm -f
 
+# Couleurs
+NC  = \033[0m
+GREEN  = \033[1;32m
+RED    = \033[1;31m
+
 all:    $(NAME)
 
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
-	@printf "\033[1;32mCOMPILATION REUSSIE\033[0m\n"
+	@printf "$(GREEN)COMPILATION REUSSIE$(NC)\n"
 
 clean:
 	$(RM) $(OBJ)
-	@printf "\033[1;31mSUPPRESSION DES .O\033[0m\n"
+	@printf "$(RED)SUPPRESSION DES .O$(NC)\n"
 
 fclean: clean
 	$(RM) $(NAME)
-	@printf  "\033[1;31mSUPPRESSION DU BINAIRE\033[0m\n"
+	@printf "$(RED)SUPPRESSION DU BINAIRE$(NC)\n"
 
 re: fclean all
