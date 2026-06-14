@@ -25,6 +25,22 @@ class Fixed{
         float toFloat(void) const;
         int toInt(void) const;
 
+        // The 6 comparison operators
+        bool    operator>(Fixed const &rhs);
+        bool    operator<(Fixed const &rhs);
+        bool    operator>=(Fixed const &rhs);
+        bool    operator<=(Fixed const &rhs);
+        bool    operator==(Fixed const &rhs);
+        bool    operator!=(Fixed const &rhs);
+
+        //The 4 arithmetic operators (création d'un nouves nombre)
+        Fixed   operator+(Fixed const &rhs) const;
+        Fixed   operator-(Fixed const &rhs) const;
+        Fixed   operator*(Fixed const &rhs) const;
+        Fixed   operator/(Fixed const &rhs) const;
+        
+
+
         // Getter
         int getRawBits(void) const;
 

@@ -76,6 +76,51 @@ std::ostream &operator<<(std::ostream &cout, Fixed const &fixed){
 //    return out;
 //}
 
+
+// The 6 comparison operators
+bool    Fixed::operator>(Fixed const &rhs){
+    bool    res = this->_value > rhs._value; // acces car meme clase
+
+    return (res);
+}
+
+bool    Fixed::operator<(Fixed const &rhs){
+    bool    res = this->_value < rhs._value; // acces car meme clase
+
+    return (res);
+}
+
+bool    Fixed::operator>=(Fixed const &rhs){
+    bool    res = this->_value >= rhs._value; // acces car meme clase
+
+    return (res);
+}
+
+bool    Fixed::operator<=(Fixed const &rhs){
+    bool    res = this->_value <= rhs._value; // acces car meme clase
+
+    return (res);
+}
+
+bool    Fixed::operator==(Fixed const &rhs){
+    bool    res = this->_value == rhs._value; // acces car meme clase
+
+    return (res);
+}
+
+bool    Fixed::operator!=(Fixed const &rhs){
+    bool    res = this->_value != rhs._value; // acces car meme clase
+
+    return (res);
+}
+
+//The 4 arithmetic operators (création d'un nouves nombre)
+Fixed   Fixed::operator+(Fixed const &rhs) const{
+    Fixed   res.(this->_value + rhs._value);
+
+    return (res);
+}
+
 int    Fixed::getRawBits(void) const {
     std::cout << "getRawBits member function called" << std::endl;
     return (this->_value);
