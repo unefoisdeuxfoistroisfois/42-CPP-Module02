@@ -116,10 +116,105 @@ bool    Fixed::operator!=(Fixed const &rhs){
 
 //The 4 arithmetic operators (création d'un nouves nombre)
 Fixed   Fixed::operator+(Fixed const &rhs) const{
-    Fixed   res.(this->_value + rhs._value);
+    Fixed   res;
+
+    res._value = (this->_value + rhs._value);
 
     return (res);
 }
+
+Fixed   Fixed::operator-(Fixed const &rhs) const{
+    Fixed   res;
+
+    res._value = (this->_value - rhs._value);
+
+    return (res);
+}
+
+Fixed   Fixed::operator*(Fixed const &rhs) const{
+    Fixed   res;
+
+    // Constructeur float
+    //return Fixed(this->toFloat() * rhs.toFloat());
+
+    // Via _value direcet
+    res._value = (this->_value * rhs._value) / 256;
+
+    return (res);
+}
+
+Fixed   Fixed::operator/(Fixed const &rhs) const{
+    Fixed   res;
+
+    // Constructeur float
+    //return Fixed(this->toFloat() / rhs.toFloat());
+
+    // roundf car construcor de base est un int
+    res._value = (this->toFloat() / rhs.toFloat());
+
+    return (res);
+}
+
+//pré-incrément, incrémente d'abord et retourne ensuite
+Fixed   &Fixed::operator++(){
+    this->_value ++;
+
+    // return l'objet modifier
+    return (*this);
+}
+
+//post-incrément, retourne et ensuite on incrémente d'abord
+Fixed   &Fixed::operator--(){
+    this->_value --;
+
+    // return l'objet modifier
+    return (*this);
+}
+
+Fixed   Fixed::operator++(int){
+    Fixed   tmp(*this);
+
+    this->_value ++;
+
+    return (tmp);
+}
+
+Fixed   Fixed::operator--(int){
+    Fixed   tmp(*this);
+
+    this->_value --;
+
+    return (tmp);
+}
+
+Fixed   &Fixed::min(Fixed &n1, Fixed &n2){
+    if (n1._value < n2._value){
+        return (n1);
+    }
+    return (n2);
+}
+
+Fixed const &Fixed::min(Fixed const &n1, Fixed const &n2) {
+    if (n1._value < n2._value){
+        return (n1);
+    }
+    return (n2);
+}
+
+Fixed   &Fixed::max(Fixed &n1, Fixed &n2){
+    if (n1._value > n2._value){
+        return (n1);
+    }
+    return (n2);
+}
+
+Fixed const &Fixed::max(Fixed const &n1, Fixed const &n2){
+    if (n1._value > n2._value){
+        return (n1);
+    }
+    return (n2);
+}
+
 
 int    Fixed::getRawBits(void) const {
     std::cout << "getRawBits member function called" << std::endl;

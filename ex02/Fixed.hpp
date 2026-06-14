@@ -33,13 +33,25 @@ class Fixed{
         bool    operator==(Fixed const &rhs);
         bool    operator!=(Fixed const &rhs);
 
-        //The 4 arithmetic operators (création d'un nouves nombre)
+        // The 4 arithmetic operators (création d'un nouveau nombre)
         Fixed   operator+(Fixed const &rhs) const;
         Fixed   operator-(Fixed const &rhs) const;
         Fixed   operator*(Fixed const &rhs) const;
         Fixed   operator/(Fixed const &rhs) const;
         
+        // The 4 increment/decrement
+        // modifie et retourne l'objet courant
+        Fixed   &operator++();
+        Fixed   &operator--();
+        // Ici renvoie la dernier valeur avant modificaito
+        Fixed   operator++(int);
+        Fixed   operator--(int);
 
+        // Fonctions statiques
+        static Fixed &min(Fixed &n1, Fixed &n2);
+        static Fixed const &min(Fixed const &n1, Fixed const &n2);
+        static Fixed &max(Fixed &n1, Fixed &n2);
+        static Fixed const &max(Fixed const &n1, Fixed const &n2);
 
         // Getter
         int getRawBits(void) const;
