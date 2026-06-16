@@ -26,12 +26,12 @@ class Fixed{
         int toInt(void) const;
 
         // The 6 comparison operators
-        bool    operator>(Fixed const &rhs);
-        bool    operator<(Fixed const &rhs);
-        bool    operator>=(Fixed const &rhs);
-        bool    operator<=(Fixed const &rhs);
-        bool    operator==(Fixed const &rhs);
-        bool    operator!=(Fixed const &rhs);
+        bool    operator>(Fixed const &rhs) const; //j'ai du ajouté pour les objet const
+        bool    operator<(Fixed const &rhs) const;
+        bool    operator>=(Fixed const &rhs) const;
+        bool    operator<=(Fixed const &rhs) const;
+        bool    operator==(Fixed const &rhs) const;
+        bool    operator!=(Fixed const &rhs) const;
 
         // The 4 arithmetic operators (création d'un nouveau nombre)
         Fixed   operator+(Fixed const &rhs) const;

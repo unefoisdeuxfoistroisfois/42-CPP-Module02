@@ -78,37 +78,37 @@ std::ostream &operator<<(std::ostream &cout, Fixed const &fixed){
 
 
 // The 6 comparison operators
-bool    Fixed::operator>(Fixed const &rhs){
+bool    Fixed::operator>(Fixed const &rhs) const{
     bool    res = this->_value > rhs._value; // acces car meme clase
 
     return (res);
 }
 
-bool    Fixed::operator<(Fixed const &rhs){
+bool    Fixed::operator<(Fixed const &rhs) const{
     bool    res = this->_value < rhs._value; // acces car meme clase
 
     return (res);
 }
 
-bool    Fixed::operator>=(Fixed const &rhs){
+bool    Fixed::operator>=(Fixed const &rhs) const{
     bool    res = this->_value >= rhs._value; // acces car meme clase
 
     return (res);
 }
 
-bool    Fixed::operator<=(Fixed const &rhs){
+bool    Fixed::operator<=(Fixed const &rhs) const{
     bool    res = this->_value <= rhs._value; // acces car meme clase
 
     return (res);
 }
 
-bool    Fixed::operator==(Fixed const &rhs){
+bool    Fixed::operator==(Fixed const &rhs) const{
     bool    res = this->_value == rhs._value; // acces car meme clase
 
     return (res);
 }
 
-bool    Fixed::operator!=(Fixed const &rhs){
+bool    Fixed::operator!=(Fixed const &rhs) const{
     bool    res = this->_value != rhs._value; // acces car meme clase
 
     return (res);

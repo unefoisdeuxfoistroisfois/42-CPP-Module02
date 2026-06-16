@@ -1,17 +1,17 @@
 .PHONY : all clean fclean re
 .SILENT :
 
-NAME    = fixed
+NAME    = bsp
 CXX     = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC     = main.cpp Fixed.cpp
+SRC     = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJ     = $(SRC:.cpp=.o)
 RM      = rm -f
 
 # Couleurs
-NC	= \033[0m
+NC		= \033[0m
 GREEN	= \033[1;32m
-RED	= \033[1;31m
+RED		= \033[1;31m
 
 all:    $(NAME)
 
