@@ -26,8 +26,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const point){
 
     // aire
     Fixed t1 = ft_area(a, b, point); // arete AB;
-    Fixed t2 = ft_area(b, c, point); // arete AB;
-    Fixed t3 = ft_area(c, a, point); // arete AB;
+    Fixed t2 = ft_area(b, c, point); // arete BC;
+    Fixed t3 = ft_area(c, a, point); // arete CA;
 
     int s1 = ft_sign(t1);
     int s2 = ft_sign(t2);
