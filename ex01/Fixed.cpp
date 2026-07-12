@@ -59,6 +59,7 @@ int Fixed::toInt(void) const{
     // décale de 8 bits vers la droite pour trouvé l'original
     int res = this->_value >> _fractioinalBits;
 
+    //return this->_value / 256;
     return (res);
 }
 
