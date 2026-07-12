@@ -6,6 +6,7 @@
 class Fixed{
     private:
         int _value;
+        // un exemplaire pour la class et cosnt la valeur ne change plus apres init
         static const int _fractioinalBits = 8;
 
     public:
